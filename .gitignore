@@ -1,0 +1,12 @@
+/*
+
+!.gitignore
+
+!BIN
+!INCLUDE
+
+BIN/*
+!BIN/Voronoi
+
+INCLUDE/*
+!INCLUDE/Voronoi
