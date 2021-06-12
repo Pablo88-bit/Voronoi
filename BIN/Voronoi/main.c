@@ -6,8 +6,8 @@ int main()
 	printf("Juan");
 	printf("Brayan");
 	printf("Marvin");
-    	printf("Cris");
+    printf("Cris");
 	printf("Pablo Mairena");
-	printf("Y soy un mae tuani");
+	printf("Me gustan mucho los deportes y el ejercicio fisico");
 	return 0;
 }
