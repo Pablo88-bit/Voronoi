@@ -6,6 +6,7 @@ int main()
 	printf("Juan");
 
 
+
 	printf("Brayan Josue Potosme Rivera");
 	printf("soy un mae tranquilo, tengo 18 años y me gusta jugar video juegos");
 	printf("Marvin Sevilla ");
@@ -15,5 +16,6 @@ int main()
 
 
 	printf("Pablo Mairena");
+	printf("Me gustan mucho los deportes y el ejercicio fisico");
 	return 0;
 }
