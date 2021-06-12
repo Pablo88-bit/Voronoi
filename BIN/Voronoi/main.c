@@ -7,7 +7,7 @@ int main()
 	printf("Brayan");
 	printf("Marvin");
     printf("Cris Lopez");
-    printf("Sou fan del arte");
+    printf("Soy fan del arte");
 	printf("Pablo Mairena");
 	printf("Y soy un mae tuani");
 	return 0;
