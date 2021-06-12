@@ -4,7 +4,8 @@
 int main()
 {
 	printf("Juan");
-	printf("Brayan");
+	printf("Brayan Josue Potosme Rivera");
+	printf("soy un mae tranquilo, tengo 18 años y me gusta jugar video juegos");
 	printf("Marvin");
     	printf("Cris");
 	printf("Pablo Mairena");
