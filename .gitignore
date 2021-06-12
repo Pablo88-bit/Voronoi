@@ -11,6 +11,8 @@
 
 BIN/*
 !BIN/Voronoi
+!BIN/Voronoi/*
 
 INCLUDE/*
 !INCLUDE/Voronoi
+!INCLUDE/Voronoi/*
