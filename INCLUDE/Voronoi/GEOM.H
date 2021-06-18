@@ -11,11 +11,11 @@
  * las mismas estructuras.
  * ***********************************************************************************/
 
-typedef enum bool
-{
-    false,
-    true
-} bool;
+#define true 1
+#define false 0
+
+/* en lugar de un enum para consumir menos memoria */
+typedef unsigned char bool;
 
 #define RADIO_VERTICE 2
 
