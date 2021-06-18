@@ -6,8 +6,10 @@
 
 #include <voronoi/geom.h>
 #include <voronoi/ui.h>
+#include <voronoi/voro.h>
 
 #define COLOR_VERTICE WHITE
+#define COLOR_VERTICE_MEDIO GREEN
 
 int main()
 {
@@ -26,9 +28,10 @@ int main()
 
 	/* Coleccion de vertices agregados por el usuario */
 	Vertices vertices;
+	Vertices puntosMedios;
 
 	/* inicio aplicacion grafica */
-	initgraph(&gd, &gm, "");
+	initgraph(&gd, &gm, "C:\\tc20\\BIN");
 	cleardevice();
 
 	/* limites del plano */
@@ -39,6 +42,7 @@ int main()
 
 	/* inicializando coleccion de vertices */
 	vertices = newVertices(0);
+	puntosMedios = newVertices(0);
 
 	/* inicializando raton */
 	raton = newMouse();
@@ -51,6 +55,18 @@ int main()
 			input = getch();
 
 		ActualizarMouse(&raton);
+
+		/* manejando entrada de teclado */
+		switch(input)
+		{
+			case 'p':
+				puntosMedios = ObtenerPuntosMedios(&vertices);
+				cleardevice();
+				DibujarVertices(&vertices, COLOR_VERTICE);
+				DibujarVertices(&puntosMedios, COLOR_VERTICE_MEDIO);
+				input = '';
+				break;
+		}
 
 		/* manejando click izquierdo, agrega un vertice y lo dibuja */
 		if(raton.clickIzquierdo == Presionado && raton.operacionClickIzquierdo == NoHecho)

@@ -7,6 +7,7 @@ Vertice newVertice(double x, double y)
 
 	v.x = x;
 	v.y = y;
+	v.extremo = false;
 
 	return v;
 }
@@ -82,6 +83,14 @@ void RemoverUltimoVertice(Vertices *v)
 	}
 }
 
+/* Borra una coleccion de vertices */
+void RemoverVertices(Vertices *v)
+{
+	free(v->elementos);
+	v->elementos = NULL;
+	v->longitud = 0;
+}
+
 /* dibuja un vertice con su color */
 void DibujarVertice(Vertice *v, enum COLORS color)
 {
@@ -109,5 +118,31 @@ void DibujarVertices(Vertices *v, enum COLORS color)
 			DibujarVertice(&v->elementos[i], color);
 		}
 	}
+}
+
+/* funciones geometricas */
+/* calcula el doble del area de un triangulo utilizando la determinante */
+int Area2(Vertice *a, Vertice *b, Vertice *c)
+{
+	int area2 = a->x * b->y - a->y * b->x + b->x * c->y - b->y * c->x + c->x * a->y - c->y * a->x;
+
+	return area2;
+}
+
+/* usa el signo de la determinante de un triangulo
+para determinar si c esta a la izquierda del segmento ab */
+bool EnLaIzquierda(Vertice *a, Vertice* b, Vertice *c)
+{
+	return (Area2(a, b, c) > 0);
+}
+
+/* determina si el punto d se encuentra dentro de el triangulo abc */
+bool EnTriangulo(Vertice* a, Vertice* b, Vertice* c, Vertice* d)
+{
+	bool abIzquierda = EnLaIzquierda(a, b, d);
+	bool bcIzquierda = EnLaIzquierda(b, c, d);
+	bool caIzquierda = EnLaIzquierda(c, a, d);
+
+	return abIzquierda == bcIzquierda && bcIzquierda == caIzquierda;
 }
 
